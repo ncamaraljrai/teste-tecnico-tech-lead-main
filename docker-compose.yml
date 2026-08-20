@@ -39,6 +39,8 @@ services:
       context: .
       dockerfile: client/Dockerfile
     depends_on: [api]
+    environment:
+      API_UPSTREAM: http://api:3000
     ports: ["8080:80"]
     healthcheck:
       test: ["CMD", "wget", "--spider", "--quiet", "http://127.0.0.1/"]

@@ -44,6 +44,19 @@ npm audit --omit=dev --audit-level=high
 
 O último `npm audit --omit=dev --audit-level=high` executado não encontrou vulnerabilidades de produção. Dependências de desenvolvimento ainda devem ser revisadas separadamente.
 
+## Deploy no Render
+
+O arquivo `render.yaml` é um Blueprint com PostgreSQL, API e frontend. No painel do Render:
+
+1. Crie um Blueprint apontando para este repositório e selecione `render.yaml`.
+2. Confirme a criação do PostgreSQL e dos dois Web Services.
+3. Aguarde `/ready` da API e `/` do frontend.
+4. Acesse a URL pública exibida para `ilumeo-conversion-web`.
+
+O deploy cria o schema `messages` automaticamente, mas o dump oficial não é enviado ao GitHub por seu tamanho. Portanto, após criar o banco Render, importe os dados por um canal seguro de administração e execute `db/03_transform.sql`; sem essa etapa, o dashboard estará publicado, porém sem dados (`DEPLOY DATA NOT VERIFIED`). O link público só pode ser informado depois que o usuário autorizar a criação dos serviços e concluir a autenticação no Render.
+
+Status: `DEPLOY PREPARED — NOT PUBLISHED`.
+
 ## Contrato da API
 
 `GET /api/v1/conversion-rate/timeseries`
