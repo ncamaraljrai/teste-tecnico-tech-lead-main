@@ -41,6 +41,7 @@ services:
     depends_on: [api]
     environment:
       API_UPSTREAM: http://api:3000
+      API_RESOLVER: 127.0.0.11
       PORT: 80
     ports: ["8080:80"]
     healthcheck:

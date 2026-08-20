@@ -31,6 +31,8 @@ services:
     healthCheckPath: /
     envVars:
       - key: API_UPSTREAM
-        value: http://ilumeo-conversion-api:3000
+        value: https://ilumeo-conversion-api.onrender.com
+      - key: API_RESOLVER
+        value: 1.1.1.1 8.8.8.8
       - key: PORT
         value: 10000
