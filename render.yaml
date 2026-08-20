@@ -32,3 +32,5 @@ services:
     envVars:
       - key: API_UPSTREAM
         value: http://ilumeo-conversion-api:3000
+      - key: PORT
+        value: 10000
