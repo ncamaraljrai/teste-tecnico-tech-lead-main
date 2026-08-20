@@ -8,6 +8,7 @@ services:
   - type: web
     name: ilumeo-conversion-api
     runtime: docker
+    plan: free
     dockerfilePath: ./server/Dockerfile
     dockerContext: .
     healthCheckPath: /ready
@@ -24,6 +25,7 @@ services:
   - type: web
     name: ilumeo-conversion-web
     runtime: docker
+    plan: free
     dockerfilePath: ./client/Dockerfile
     dockerContext: .
     healthCheckPath: /
