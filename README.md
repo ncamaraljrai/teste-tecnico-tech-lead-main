@@ -55,7 +55,14 @@ O arquivo `render.yaml` é um Blueprint com PostgreSQL, API e frontend. No paine
 
 O deploy cria o schema `messages` automaticamente, mas o dump oficial não é enviado ao GitHub por seu tamanho. Portanto, após criar o banco Render, importe os dados por um canal seguro de administração e execute `db/03_transform.sql`; sem essa etapa, o dashboard estará publicado, porém sem dados (`DEPLOY DATA NOT VERIFIED`). O link público só pode ser informado depois que o usuário autorizar a criação dos serviços e concluir a autenticação no Render.
 
-Status: `DEPLOY PREPARED — NOT PUBLISHED`.
+URLs publicadas:
+
+- Dashboard: https://ilumeo-conversion-web.onrender.com
+- API: https://ilumeo-conversion-api.onrender.com
+- Health: https://ilumeo-conversion-api.onrender.com/health
+- Readiness: https://ilumeo-conversion-api.onrender.com/ready
+
+Status: `DEPLOY PUBLISHED — DATA NOT IMPORTED`. Os serviços estão publicados e os endpoints retornam HTTP 200; o banco Render ainda precisa receber o dump oficial para o dashboard exibir registros.
 
 ## Contrato da API
 
